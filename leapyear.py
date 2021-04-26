@@ -29,6 +29,11 @@ while True:
         print("Please enter a valid year.")
         continue
 
+    # Make sure it's positive
+    if year < 1:
+        print("Please enter a positive year.")
+        continue
+
     if is_leap_year(int(year)):
         print("{} is a leap year.".format(year))
     else:
