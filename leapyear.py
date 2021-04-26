@@ -14,10 +14,24 @@ def is_leap_year(year):
         # If divisible by 400, a leap year
         return True
 
+while True:
+    # Read the year from standard input
+    try:
+        year = input("Enter a year: ")
+    except EOFError:
+        # EOF, just exit
+        break
 
-year = input("Enter a year: ")
-if is_leap_year(int(year)):
-    print("{} is a leap year.".format(year))
-else:
-    print("{} is not a leap year.".format(year))
+    # Convert to integer
+    try:
+        year = int(year)
+    except ValueError:
+        print("Please enter a valid year.")
+        continue
 
+    if is_leap_year(int(year)):
+        print("{} is a leap year.".format(year))
+    else:
+        print("{} is not a leap year.".format(year))
+
+    break
